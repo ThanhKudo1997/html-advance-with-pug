@@ -1,0 +1,7 @@
+mixin ListItem(title = "default title",caption ="default caption")
+  li.list-item 
+    h1.list-title= title 
+    if caption 
+      span.list-caption= caption
+    if  block
+      block 
