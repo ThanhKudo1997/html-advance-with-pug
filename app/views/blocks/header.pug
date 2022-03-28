@@ -3,17 +3,12 @@ header.header
   .container 
     .header-top 
       a.header-logo(href="#") MoGo
-      ul.header-menu 
-        li.header-menu-item 
-          a.header-menu-link(href="#") About
-        li.header-menu-item 
-          a.header-menu-link(href="#") Service
-        li.header-menu-item 
-          a.header-menu-link(href="#") Work
-        li.header-menu-item 
-          a.header-menu-link(href="#") Block
-        li.header-menu-item 
-          a.header-menu-link(href="#") Contact
+      i.fa.fa-bars.header-toggle
+      ul.header-menu
+        +menuLink("Service")
+        +menuLink("Work")
+        +menuLink("Block")
+        +menuLink("Contact")
         li.header-menu-item 
           a.header-menu-icon(href="#")
             i.fa.fa-shopping-cart
@@ -24,5 +19,8 @@ header.header
       h2.header-content-caption Creative templace 
       h1.header-content-main Welcome to mogo 
       a.header-content-more(href="#") lear more 
-
     .header-bottom
+      +headerBottomItem("01", "Intro")
+      +headerBottomItem("02", "Work")
+      +headerBottomItem("03", "About")
+      +headerBottomItem("04", "Contact")

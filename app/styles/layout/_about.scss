@@ -1,0 +1,106 @@
+.about {
+  padding-top: 9.3rem;
+  padding-bottom: 11rem;
+  background-color: white;
+
+  // #C1 Flex box
+  // &-list{
+  //     display: flex;
+  //     flex-wrap: wrap;
+  //     margin-left: -3rem;
+  // }
+  // &-item{
+  //     width: calc(33.33% - 3rem);
+  //     margin-left: 3rem;
+  // }
+  // #C2 GRID
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  &-item {
+    position: relative;
+    z-index: 1;
+    transition: transform .25s linear;
+  }
+
+  &-item:hover {
+    transform: translate(-1rem,-1rem);
+    cursor: pointer;
+    .about-content {
+      opacity: 1;
+      visibility: visible;
+    }
+    &::after{
+    transform: translate(1rem,1rem);
+
+    }
+  }
+
+  &-item::after {
+    content: "";
+    @include aboslute-full;
+    @include bg($third-color);
+    z-index: -1;
+    transition: all .25s linear;
+
+  }
+  &-image{
+    display: block;
+    @include size(100%);
+    object-fit: cover;
+  }
+  &-content {
+    @include aboslute-full;
+    background: linear-gradient(to bottom, rgba($primaty-color, 0.8), rgba($secondary-color, 0.8)) no-repeat center / cover;
+    z-index: 2;
+    color: white;
+    text-transform: uppercase;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .25s linear;
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    @include flex(center,center,column);
+  }
+
+  &-icon {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  &-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    @include breakLine(1);
+
+  }
+  @include maxWidth(767px){
+    padding-top: 5rem;
+		padding-bottom: 5rem;
+    //Respon sive grid
+    &-list {
+      grid-template-columns: unset;
+      grid-row-gap: 2rem;
+      grid-auto-flow: column  ;
+      grid-auto-columns: 80%;
+      overflow-x: auto;
+      padding: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      @include hideScroll;
+    }
+    &-item{
+      scroll-snap-align: center;
+    }
+    // Responsive flex
+    //  &-item {
+    //  width: 100%;
+    //  margin-bottom: 2rem;
+    // }
+  }
+}
