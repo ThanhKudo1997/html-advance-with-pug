@@ -1,0 +1,79 @@
+.team {
+  background-color: #fff;
+  padding: 10rem 0;
+  --image-height: 47rem;
+
+  &-image{
+    @include size(100%,var(--image-height));
+    object-fit: cover;
+  }
+  
+  &-list{
+    @include flex(stretch, space-between);
+    flex-wrap: wrap;
+  }
+  &-item{
+    width: calc(33.33% - 20px);
+  }
+  &-info {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    flex-grow: 1;
+    height: calc(100% - var(--image-height));
+    @include flex(center, space-between,column)
+  }
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+    @include breakLine(2);
+  }
+  &-position {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: $text-color;
+    margin-top: auto;
+  }
+  &-social{
+    @include flex(center,center);
+  }
+  &-social-item:not(:first-child){
+    border-left: 1px solid $primary-color;
+  }
+  &-social-link{
+    @include size(5rem);
+    display: inline-block;
+    @include flex(center,center);
+    color: $primary-color;
+    font-size: 2rem;
+    @include bg($secondary-color);
+    &:hover{
+      color: white;
+      @include bg($primary-color);
+      transition: all 0.25s;
+    }
+  }
+  @include maxWidth(1023px){
+    padding: 5rem;
+    &-list{
+      @include touchSlider(55%);
+    }
+  }
+  @include maxWidth(767px){
+    --image-height : 40rem;
+    &-list{
+      @include touchSlider(85%);
+    }
+  }
+}
+.brand{
+  padding: 8rem 0;
+  @include bg($gray-color);
+  @include maxWidth(767px){
+    padding: 3rem;
+  }
+
+}
+@include hoverEffect(".team-main",".team-content");
