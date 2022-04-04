@@ -266,6 +266,7 @@ body {
     text-overflow: ellipsis;
     width: 100%;
     max-width: 100%;
+    white-space: pre-wrap;
     word-break: break-word; }
   @media screen and (max-width: 767px) {
     .about {
@@ -457,6 +458,7 @@ body {
     text-overflow: ellipsis;
     width: 100%;
     max-width: 100%;
+    white-space: pre-wrap;
     word-break: break-word; }
   .service-item-desc {
     color: #999;
