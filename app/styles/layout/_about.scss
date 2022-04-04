@@ -76,7 +76,7 @@
     font-weight: bold;
     font-size: 1.8rem;
     line-height: 1.5;
-    @include breakLine(1);
+    @include textClamp(1);
 
   }
   @include maxWidth(767px){
