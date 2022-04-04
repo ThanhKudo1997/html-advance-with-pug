@@ -5,8 +5,8 @@
 }
 
 // === SET ABOUSLUTE ===
-@mixin absolute($direction: "left") {
-    position: absolute;
+@mixin absolute($direction: "left", $postion: absolute) {
+    position: $postion;
 
     @if $direction==left {
         left: 50%;
