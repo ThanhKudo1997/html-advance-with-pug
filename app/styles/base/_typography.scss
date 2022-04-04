@@ -2,3 +2,15 @@ html{
     font-size: 62.5%;
     // font-size: 16px;
 }
+// TEXT
+.text{
+  font-family: $secondary-font;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.text--light{
+  font-weight: 300;
+}
+.text--normal{
+  font-style: normal;
+}

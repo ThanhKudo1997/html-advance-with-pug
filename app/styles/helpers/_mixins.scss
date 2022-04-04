@@ -85,22 +85,24 @@
   word-break: break-word;
 }
 
-@mixin hoverEffect($itemClass, $contentClass) {
+@mixin hoverEffect($itemClass, $contentClass, $transform: true) {
   #{$itemClass} {
     position: relative;
     z-index: 1;
     transition: transform .25s linear;
 
-    &::after {
-      content: "";
-      @include aboslute-full;
-      @include bg($third-color);
-      z-index: -1;
-      transition: all .25s linear;
+    @if $transform==true {
+
+      &::after {
+        content: "";
+        @include aboslute-full;
+        @include bg($third-color);
+        z-index: -1;
+        transition: all .25s linear;
+      }
     }
 
     &:hover {
-      transform: translate(-1rem, -1rem);
       cursor: pointer;
 
       #{$contentClass} {
@@ -108,10 +110,14 @@
         visibility: visible;
       }
 
-      &::after {
-        transform: translate(1rem, 1rem);
+      @if $transform==true {
+        transform: translate(-1rem, -1rem);
 
+        &::after {
+          transform: translate(1rem, 1rem);
+        }
       }
+
     }
   }
 
@@ -128,7 +134,7 @@
 
 // touch slider
 
-@mixin touchSlider($width: 80%,$gap: 2.5rem,$padding : 1rem) {
+@mixin touchSlider($width: 80%, $gap: 2.5rem, $padding : 1rem) {
   display: grid !important;
   justify-content: flex-start !important;
   grid-template-columns: unset;
