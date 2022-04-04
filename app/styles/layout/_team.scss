@@ -27,7 +27,7 @@
     margin-bottom: 1.5rem;
     font-weight: 500;
     line-height: 1.4;
-    @include breakLine(2);
+    @include textClamp(2);
   }
   &-position {
     font-size: 1.5rem;

@@ -39,7 +39,7 @@
     font-family: $secondary-font;
     font-style: italic;
     color: $text-color;
-    @include breakLine(3);
+    @include textClamp(3);
   }
 
   &-author {

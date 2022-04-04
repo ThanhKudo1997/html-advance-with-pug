@@ -67,3 +67,11 @@ mixin teamItem(src = "../images/img-team1.png",name ="Chridstopher Jonh",positio
     .team-info  
       h3.team-name= name
       span.team-position= position
+//- WORK
+mixin workItem(src= "../images/img-work1.png",icon = "fa fa-home", title= "photography super", full ="", desc ="Lorem ipsum dolor sit amet, consectetu")
+  .work-item(class= full)
+    img.work-image(src= src)
+    .work-content 
+      i.work-icon(class= icon)
+      h3.work-title= title
+      span.work-desc.text= desc

@@ -1,6 +1,17 @@
 html {
   font-size: 62.5%; }
 
+.text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-style: italic; }
+
+.text--light {
+  font-weight: 300; }
+
+.text--normal {
+  font-style: normal; }
+
 a {
   text-decoration: none; }
 
@@ -298,9 +309,9 @@ body {
     -webkit-transition: all .25s linear;
     transition: all .25s linear; }
   .about-item:hover {
+    cursor: pointer;
     -webkit-transform: translate(-1rem, -1rem);
-    transform: translate(-1rem, -1rem);
-    cursor: pointer; }
+    transform: translate(-1rem, -1rem); }
     .about-item:hover .about-content {
       opacity: 1;
       visibility: visible; }
@@ -879,9 +890,9 @@ body {
     -webkit-transition: all .25s linear;
     transition: all .25s linear; }
   .team-main:hover {
+    cursor: pointer;
     -webkit-transform: translate(-1rem, -1rem);
-    transform: translate(-1rem, -1rem);
-    cursor: pointer; }
+    transform: translate(-1rem, -1rem); }
     .team-main:hover .team-content {
       opacity: 1;
       visibility: visible; }
@@ -890,6 +901,111 @@ body {
       transform: translate(1rem, 1rem); }
 
 .team-content {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(233, 131, 130, 0.8)), to(rgba(238, 216, 137, 0.8))) no-repeat center/cover;
+  background: linear-gradient(to bottom, rgba(233, 131, 130, 0.8), rgba(238, 216, 137, 0.8)) no-repeat center/cover;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+
+.work {
+  padding-top: 10rem; }
+  .work-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    height: 78rem; }
+  .work-column {
+    width: 25%; }
+  .work-content {
+    color: white;
+    text-align: center;
+    padding: 1rem; }
+  .work-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem; }
+  .work-title {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.6; }
+  .work-image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+  .work-item {
+    height: 50%; }
+  .work-item--full {
+    height: 100%; }
+  @media screen and (max-width: 1600px) {
+    .work-list {
+      height: 60rem; } }
+  @media screen and (max-width: 1279px) {
+    .work-list {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      height: auto; }
+    .work-column {
+      width: 50%; }
+    .work-item {
+      height: 42rem; }
+    .work-item--full {
+      height: 84rem; } }
+  @media screen and (max-width: 767px) {
+    .work-list {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      height: auto; }
+    .work-column {
+      width: 100%; }
+    .work-item, .work-item--ful {
+      height: auto; } }
+
+.work-item {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: -webkit-transform .25s linear;
+  transition: -webkit-transform .25s linear;
+  transition: transform .25s linear;
+  transition: transform .25s linear, -webkit-transform .25s linear; }
+  .work-item:hover {
+    cursor: pointer; }
+    .work-item:hover .work-content {
+      opacity: 1;
+      visibility: visible; }
+
+.work-content {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(233, 131, 130, 0.8)), to(rgba(238, 216, 137, 0.8))) no-repeat center/cover;
   background: linear-gradient(to bottom, rgba(233, 131, 130, 0.8), rgba(238, 216, 137, 0.8)) no-repeat center/cover;
   z-index: 2;
