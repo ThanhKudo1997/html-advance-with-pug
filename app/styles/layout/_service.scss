@@ -3,11 +3,10 @@
   @include bg(white);
 
   &-list {
-    @include flex;
-    margin-left: -4rem;
+    @include flex(stretch, space-between);
     margin-top: 6.5rem;
+  
   }
-
   &-list+&-list {
     border-top: 1px solid $gray-dark-color;
     margin-top: 5rem;
@@ -15,8 +14,7 @@
   }
 
   &-item {
-    width: calc(33.33% - 4rem);
-    margin-left: 4rem;
+    width: calc(33.33% - 2.7rem);
     @include flex(flex-start)
   }
 
@@ -28,15 +26,55 @@
 
   &-item-title {
     // color: $third-color;
+    font-weight: 500;
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
+    line-height: 1.4;
+    @include textClamp(2);
+
   }
 
   &-item-desc {
     color: $text-color;
     font-family: $secondary-font;
     line-height: 1.6;
-    flex-grow: 1;
+  }
+  &-item-info{
+    width: calc(100% - 9.5rem);
+    display: flex;
+    height: 100%;
+    @include flex(flex-start,space-between,column);
+  }
+  // // USER DISPLAY GRID
+  // @include minWidth(1024px){
+  //   &-list{
+  //     display:grid;
+  //     grid-template-columns: repeat(3,1fr);
+  //     // grid-template-rows: ;
+  //     grid-gap: 0 40px;
+  //   }
+  //   &-item{
+  //     width: auto;
+  //   }
+  // }
+  @include maxWidth(1023px){
+    padding: 5rem;
+    &-list{
+      display: block;
+    }
+    &-item{
+      width: 100%;
+    }
+    &-item-icon{
+      margin-left: 0;
+    }
+    &-item:not(:last-child){
+      margin-bottom: 3rem;
+    }
+    
+  }
+  @include maxWidth(767px){
+    padding: 3rem;
   }
 }
