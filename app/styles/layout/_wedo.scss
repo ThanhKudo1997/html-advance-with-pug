@@ -28,7 +28,7 @@
   &-item-title {
     text-transform: uppercase;
     font-weight: 500;
-    @include breakLine;
+    @include textClamp;
     margin-right: 2rem;
   }
 
