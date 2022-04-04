@@ -20,51 +20,19 @@
     grid-column-gap: 30px;
   }
 
-  &-item {
-    position: relative;
-    z-index: 1;
-    transition: transform .25s linear;
-  }
-
-  &-item:hover {
-    transform: translate(-1rem,-1rem);
-    cursor: pointer;
-    .about-content {
-      opacity: 1;
-      visibility: visible;
-    }
-    &::after{
-    transform: translate(1rem,1rem);
-
-    }
-  }
-
-  &-item::after {
-    content: "";
-    @include aboslute-full;
-    @include bg($third-color);
-    z-index: -1;
-    transition: all .25s linear;
-
-  }
   &-image{
     display: block;
     @include size(100%);
     object-fit: cover;
   }
   &-content {
-    @include aboslute-full;
-    background: linear-gradient(to bottom, rgba($primaty-color, 0.8), rgba($secondary-color, 0.8)) no-repeat center / cover;
-    z-index: 2;
-    color: white;
-    text-transform: uppercase;
-    overflow: hidden;
-    opacity: 0;
+    
     transition: all .25s linear;
+    text-transform: uppercase;
     text-align: center;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    @include flex(center,center,column);
+    color: white;
   }
 
   &-icon {
@@ -104,3 +72,4 @@
     // }
   }
 }
+@include hoverEffect(".about-item",".about-content");

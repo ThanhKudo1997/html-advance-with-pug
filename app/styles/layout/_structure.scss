@@ -32,7 +32,7 @@
 	&-heading::after{
 		content: "";
 		@include size(6.5rem,4px);
-		@include bg($primaty-color);
+		@include bg($primary-color);
 		@include absolute();
 		bottom:0;
 	}
