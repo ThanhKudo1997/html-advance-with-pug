@@ -14,6 +14,20 @@ body {
   color: #333;
   font-size: 14px; }
 
+.reveal {
+  position: relative;
+  -webkit-transform: translateY(150px);
+  transform: translateY(150px);
+  opacity: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
+  .reveal.active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; }
+
 .header {
   min-height: 100rem;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(233, 131, 130, 0.8)), to(rgba(238, 216, 137, 0.8))), url("../images/img-header-bg.jpg") no-repeat center/cover;
@@ -467,6 +481,30 @@ body {
   @media screen and (max-width: 767px) {
     .service {
       padding: 3rem; } }
+
+.device {
+  padding-top: 11rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.5))), url("../images/img-device-bg.png") no-repeat center/cover;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), url("../images/img-device-bg.png") no-repeat center/cover; }
+  .device-image {
+    margin: 0 auto -9.3rem;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  @media screen and (max-width: 767px) {
+    .device {
+      padding-top: 5rem; }
+      .device-image {
+        max-width: 80%;
+        margin-bottom: -8.6rem; } }
+  @media screen and (max-width: 425px) {
+    .device-image {
+      margin-bottom: -4.6rem; } }
+
+.wedo {
+  padding: 10rem 0; }
 
 .wrapper {
   max-width: 1920px;
