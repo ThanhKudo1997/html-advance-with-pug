@@ -54,7 +54,7 @@
   }
   &-content {
     @include aboslute-full;
-    background: linear-gradient(to bottom, rgba($primaty-color, 0.8), rgba($secondary-color, 0.8)) no-repeat center / cover;
+    background: linear-gradient(to bottom, rgba($primary-color, 0.8), rgba($secondary-color, 0.8)) no-repeat center / cover;
     z-index: 2;
     color: white;
     text-transform: uppercase;
