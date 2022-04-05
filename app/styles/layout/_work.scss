@@ -1,69 +1,141 @@
-.work{
+.work {
   padding-top: 10rem;
-  &-list{
+
+  &-list {
     @include flex;
     height: 78rem;
   }
-  &-column{
+
+  &-column {
     width: 25%;
   }
-  &-content{
+
+  &-content {
     color: white;
     text-align: center;
     padding: 1rem;
   }
-  &-icon{
+
+  &-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
   }
-  &-title{
+
+  &-title {
     text-transform: uppercase;
     margin-bottom: 1rem;
     line-height: 1.6;
   }
-  &-image{
+
+  &-image {
     @include size(100%);
     object-fit: cover;
   }
-  &-item{
+
+  &-item {
     height: 50%
   }
-  &-item--full{
+
+  &-item--full {
     height: 100%;
   }
-  @include maxWidth(1600px){
-    &-list{
+
+  @include maxWidth(1600px) {
+    &-list {
       height: 60rem;
     }
   }
-  @include maxWidth(1279px){
-    &-list{
+
+  @include maxWidth(1279px) {
+    &-list {
       flex-wrap: wrap;
       height: auto;
     }
-    &-column{
+
+    &-column {
       width: 50%;
     }
-    &-item{
+
+    &-item {
       height: 42rem;
     }
-    &-item--full{
+
+    &-item--full {
       height: 84rem;
     }
   }
-  @include maxWidth(767px){
-    &-list{
+
+  @include maxWidth(767px) {
+    &-list {
       flex-wrap: wrap;
       height: auto;
     }
-    &-column{
+
+    &-column {
       width: 100%;
     }
+
     &-item,
-    &-item--ful{
+    &-item--ful {
       height: auto;
     }
   }
 }
 
-@include hoverEffect(".work-item ",".work-content",false);
+// css grid
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 30rem;
+  grid-template-areas:
+    "h1 h3 h5 h6"
+    "h2 h4 h5 h7"
+  ;
+
+  .work-item {
+    height: 100%;
+
+    &:nth-child(2) {
+      grid-area: h2;
+    }
+
+    &:nth-child(3) {
+      grid-area: h3;
+    }
+
+    &:nth-child(4) {
+      grid-area: h4;
+    }
+
+    &:nth-child(5) {
+      grid-area: h5;
+    }
+
+    &:nth-child(6) {
+      grid-area: h6;
+    }
+
+    &:last-child {
+      grid-area: h7;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "h1 h3 "
+      "h2 h4 "
+      "h5 h6 "
+      "h5 h7 "
+    ;
+  }
+  @include maxWidth(767px){
+    display: block;
+    .work-item{
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include hoverEffect(".work-item ", ".work-content", false);

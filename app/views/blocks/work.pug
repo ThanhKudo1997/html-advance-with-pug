@@ -1,16 +1,24 @@
 section.work
   .container 
     +blockBox("What we do", "some of out work" , "Lorem ipsum dolor sit amet, consectetur adipisicing elit, se")
-  .work-list 
-    .work-column 
+  //- .work-list 
+  //-   .work-column 
+  //-     +workItem
+  //-     +workItem('../images/img-work1.png',"fa fa-cog", "frontend developer")
+  //-   .work-column 
+  //-     +workItem
+  //-     +workItem('../images/img-work2.png',"fa fa-cog", "frontend developer")
+  //-   .work-column 
+  //-     +workItem('../images/img-work5.png',"fa fa-heart", "frontend developer", "work-item--full")
+  //-   .work-column 
+  //-     +workItem
+  //-     +workItem
+  .work-grid
       +workItem
       +workItem('../images/img-work1.png',"fa fa-cog", "frontend developer")
-    .work-column 
       +workItem
       +workItem('../images/img-work2.png',"fa fa-cog", "frontend developer")
-    .work-column 
       +workItem('../images/img-work5.png',"fa fa-heart", "frontend developer", "work-item--full")
-    .work-column 
       +workItem
       +workItem
 
